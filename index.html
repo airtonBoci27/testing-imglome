@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - Jornada Científica Internacional | IMGLOME</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #000033;
+            margin: 0;
+            overflow-x: hidden;
+        }
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, #001a4d 0%, #000033 100%);
+            z-index: 1;
+        }
+        .glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+        .text-gradient {
+            background: linear-gradient(to right, #67e8f9, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .info-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.4s ease;
+        }
+        .info-card:hover {
+            background: rgba(255, 255, 255, 0.07);
+            transform: translateY(-5px);
+        }
+        .input-glass {
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            color: white;
+        }
+        .input-glass:focus {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: #22d3ee;
+            outline: none;
+            box-shadow: 0 0 15px rgba(34, 211, 238, 0.2);
+        }
+        select option { color: #000; background: #fff; }
+        
+        .fade-in {
+            animation: fadeIn 1s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .spinner {
+            border: 3px solid rgba(255, 255, 255, 0.1);
+            border-top: 3px solid #22d3ee;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4 md:p-10">
+
+    <div id="particles-js"></div>
+
+    <main class="relative z-10 w-full max-w-6xl glass rounded-[3rem] overflow-hidden flex flex-col md:flex-row fade-in">
+        
+        <div class="w-full md:w-5/12 p-8 md:p-14 border-b md:border-b-0 md:border-r border-white/10 flex flex-col justify-center bg-white/5">
+            <div class="bg-white p-3 rounded-2xl inline-block mb-10 w-fit shadow-2xl">
+                <img src="https://drive.google.com/uc?export=view&id=10BeA12jPWXeHbuQfouXzpsIxOj8XQtcv" alt="IMGLOME" class="h-8">
+            </div>
+
+            <h1 class="text-3xl md:text-4xl font-800 text-white leading-tight mb-12">
+                Jornada Científica Internacional de <br>
+                <span class="text-gradient leading-relaxed">Tecnologías en Rehabilitación</span>
+            </h1>
+
+             <div class="space-y-4">
+                <a href="https://maps.app.goo.gl/eNLaRD1k49A1aySK8" target="_blank" class="info-card p-6 rounded-3xl flex items-center gap-6 block transition-all hover:border-cyan-400">
+                    <div class="bg-cyan-500/20 p-4 rounded-2xl text-cyan-400">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                    </div>
+                    <div>
+                        <p class="text-[10px] uppercase font-bold text-cyan-400 tracking-widest leading-none mb-1 underline">Ver Ubicación</p>
+                        <p class="text-white text-lg font-semibold leading-tight">Sheraton Lima Historic Center</p>
+                    </div>
+                </a>
+
+
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="info-card p-6 rounded-3xl flex flex-col justify-center border-l-4 border-l-blue-500">
+                        <div class="flex items-center gap-2 mb-2">
+                            <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                            <span class="text-[10px] uppercase font-bold text-gray-400 tracking-widest">Fecha</span>
+                        </div>
+                        <p class="text-white text-2xl font-800">06 - 07</p>
+                        <p class="text-blue-300 text-xs font-semibold uppercase italic">Junio, 2026</p>
+                    </div>
+
+                    <div class="info-card p-6 rounded-3xl flex flex-col justify-center border-l-4 border-l-cyan-500">
+                        <div class="flex items-center gap-2 mb-2">
+                            <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            <span class="text-[10px] uppercase font-bold text-gray-400 tracking-widest">Horario</span>
+                        </div>
+                        <p class="text-white text-2xl font-800">08 - 05</p>
+                        <p class="text-cyan-300 text-xs font-semibold uppercase italic">AM a PM</p>
+                    </div>
+                </div>
+            </div>
+            
+            <p class="mt-auto pt-10 text-white/30 text-[11px] uppercase tracking-[0.4em]">IMGLOME 2026</p>
+        </div>
+
+        <div class="w-full md:w-7/12 p-8 md:p-14" id="dynamic-content">
+            
+            <div id="registration-view">
+                <h2 class="text-xl font-bold text-white mb-8 flex items-center gap-3 uppercase tracking-widest text-center md:text-left">
+                    <span class="text-cyan-400">Confirmar</span> Asistencia
+                    <div class="h-px flex-grow bg-white/10"></div>
+                </h2>
+                
+                <form class="space-y-5" id="form-imglome">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5 text-left">
+                        <div class="flex gap-2">
+                            <div class="w-1/3">
+                                <label class="text-[10px] font-bold text-gray-400 uppercase ml-1">Tipo</label>
+                                <select id="input-tipo-doc" class="input-glass w-full rounded-xl p-3 text-sm">
+                                    <option>DNI</option>
+                                    <option>C.E.</option>
+                                </select>
+                            </div>
+                            <div class="w-2/3">
+                                <label class="text-[10px] font-bold text-gray-400 uppercase ml-1">Número</label>
+                                <input type="number" id="input-numero-doc" required placeholder="00000000" class="input-glass w-full rounded-xl p-3 text-sm">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="text-[10px] font-bold text-gray-400 uppercase ml-1">Nombre</label>
+                            <input type="text" id="input-nombre" required placeholder="Ej. Juan" class="input-glass w-full rounded-xl p-3 text-sm">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5 text-left">
+                        <div>
+                            <label class="text-[10px] font-bold text-gray-400 uppercase ml-1">Apellido Paterno</label>
+                            <input type="text" id="input-apellido-paterno" required placeholder="Ej. Perez" class="input-glass w-full rounded-xl p-3 text-sm">
+                        </div>
+                        <div>
+                            <label class="text-[10px] font-bold text-gray-400 uppercase ml-1">Apellido Materno</label>
+                            <input type="text" id="input-apellido-materno" required placeholder="Ej. Hidalgo" class="input-glass w-full rounded-xl p-3 text-sm">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5 text-left">
+                        <div>
+                            <label class="text-[10px] font-bold text-gray-400 uppercase ml-1">Celular</label>
+                            <input type="tel" id="input-celular" required placeholder="999 999 999" class="input-glass w-full rounded-xl p-3 text-sm">
+                        </div>
+                        <div>
+                            <label class="text-[10px] font-bold text-gray-400 uppercase ml-1">Cargo</label>
+                            <input type="text" id="input-cargo" required placeholder="Ej. Médico" class="input-glass w-full rounded-xl p-3 text-sm">
+                        </div>
+                    </div>
+
+                    <div class="text-left">
+                        <label class="text-[10px] font-bold text-gray-400 uppercase ml-1">Email</label>
+                        <input type="email" id="input-email" required placeholder="doctor@ejemplo.com" class="input-glass w-full rounded-xl p-3 text-sm">
+                    </div>
+
+                    <div class="text-left">
+                        <label class="text-[10px] font-bold text-cyan-400 uppercase ml-1 mb-1 block">Especialidad</label>
+                        <select id="input-especialidad" required class="input-glass w-full rounded-xl p-3.5 text-sm appearance-none cursor-pointer">
+                            <option value="" disabled selected>Seleccione Especialidad</option>
+                            <option>Medicina Física y Rehabilitación</option>
+                            <option>Terapia Física y Rehabilitación</option>
+                            <option>Medicina Deportiva</option>
+                            <option>Otro</option>
+                        </select>
+                    </div>
+
+                    <div class="flex flex-col md:flex-row items-center justify-between gap-6 pt-6 text-left">
+                        <div class="flex gap-8">
+                            <label class="flex items-center gap-2 cursor-pointer text-white text-sm group">
+                                <input type="radio" name="role" value="Visitante" class="accent-cyan-400 w-4 h-4" checked> 
+                                <span class="group-hover:text-cyan-400 transition-colors">Visitante</span>
+                            </label>
+                            <label class="flex items-center gap-2 cursor-pointer text-white text-sm group">
+                                <input type="radio" name="role" value="Profesional de la salud" class="accent-cyan-400 w-4 h-4"> 
+                                <span class="group-hover:text-cyan-400 transition-colors">Profesional de la salud</span>
+                            </label>
+                        </div>
+                        
+                        <button type="submit" id="submit-btn" class="w-full md:w-auto bg-gradient-to-r from-cyan-400 to-blue-600 px-14 py-5 rounded-2xl font-bold uppercase tracking-widest text-xs shadow-lg shadow-cyan-500/30 hover:brightness-110 hover:scale-105 active:scale-95 transition-all">
+                            Confirmar Asistencia
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Vista de carga -->
+            <div id="loading-view" class="hidden text-center space-y-6 py-20">
+                <div class="spinner mx-auto"></div>
+                <h2 class="text-2xl font-bold text-white">Procesando registro...</h2>
+                <p class="text-gray-400 text-sm">Estamos enviando tu confirmación por correo</p>
+            </div>
+
+            <!-- Vista de éxito -->
+            <div id="success-view" class="hidden text-center space-y-6 animate-in py-10">
+                <div class="bg-green-500/20 w-20 h-20 rounded-full flex items-center justify-center mx-auto text-green-400 mb-4">
+                    <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+                </div>
+                <h2 class="text-3xl font-800 text-white">¡Registro Exitoso!</h2>
+                <div class="bg-white/5 border border-white/10 rounded-2xl p-8 max-w-md mx-auto">
+                    <p class="text-gray-300 text-base mb-4">
+                        Hola <span id="display-name" class="text-cyan-400 font-bold"></span>,
+                    </p>
+                    <div class="bg-cyan-500/10 border border-cyan-500/30 rounded-xl p-6 mb-4">
+                        <svg class="w-12 h-12 text-cyan-400 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                        <p class="text-white font-semibold mb-2">Confirmación enviada</p>
+                        <p class="text-gray-400 text-sm">
+                            Hemos enviado un correo de confirmación a:<br>
+                            <span id="display-email" class="text-cyan-400 font-mono text-xs"></span>
+                        </p>
+                    </div>
+                    <p class="text-gray-400 text-xs">
+                        Por favor, revisa tu bandeja de entrada y la carpeta de spam. El correo contiene los detalles de tu registro y la información del evento.
+                    </p>
+                </div>
+                
+                <div class="pt-4">
+                    <button onclick="location.reload()" class="bg-white/10 hover:bg-white/20 text-white px-10 py-4 rounded-full text-xs font-bold uppercase tracking-widest transition-all">
+                        Nuevo Registro
+                    </button>
+                </div>
+            </div>
+
+            <!-- Vista de error -->
+            <div id="error-view" class="hidden text-center space-y-6 animate-in py-10">
+                <div class="bg-red-500/20 w-20 h-20 rounded-full flex items-center justify-center mx-auto text-red-400 mb-4">
+                    <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12"/></svg>
+                </div>
+                <h2 class="text-3xl font-800 text-white">Error en el envío</h2>
+                <p class="text-gray-300 text-sm max-w-md mx-auto">
+                    No pudimos enviar el correo de confirmación. Por favor, verifica tu conexión e intenta nuevamente.
+                </p>
+                
+                <div class="pt-4">
+                    <button onclick="location.reload()" class="bg-red-500/20 hover:bg-red-500/30 text-white px-10 py-4 rounded-full text-xs font-bold uppercase tracking-widest transition-all">
+                        Intentar de nuevo
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+        // ============================================
+        // CONFIGURACIÓN DE EMAILJS
+        // ============================================
+        // IMPORTANTE: Debes registrarte en https://www.emailjs.com/
+        // y reemplazar estos valores con los tuyos:
+        
+        const EMAILJS_PUBLIC_KEY = "TU_PUBLIC_KEY_AQUI"; // Reemplazar
+        const EMAILJS_SERVICE_ID = "TU_SERVICE_ID_AQUI"; // Reemplazar
+        const EMAILJS_TEMPLATE_ID = "TU_TEMPLATE_ID_AQUI"; // Reemplazar
+        
+        // Inicializar EmailJS
+        emailjs.init(EMAILJS_PUBLIC_KEY);
+
+        // ============================================
+        // LÓGICA DEL FORMULARIO
+        // ============================================
+        const form = document.getElementById('form-imglome');
+        const regView = document.getElementById('registration-view');
+        const loadingView = document.getElementById('loading-view');
+        const successView = document.getElementById('success-view');
+        const errorView = document.getElementById('error-view');
+
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // Obtener datos del formulario
+            const formData = {
+                tipo_documento: document.getElementById('input-tipo-doc').value,
+                numero_documento: document.getElementById('input-numero-doc').value,
+                nombre: document.getElementById('input-nombre').value,
+                apellido_paterno: document.getElementById('input-apellido-paterno').value,
+                apellido_materno: document.getElementById('input-apellido-materno').value,
+                nombre_completo: document.getElementById('input-nombre').value + ' ' + 
+                                document.getElementById('input-apellido-paterno').value + ' ' + 
+                                document.getElementById('input-apellido-materno').value,
+                celular: document.getElementById('input-celular').value,
+                cargo: document.getElementById('input-cargo').value,
+                email: document.getElementById('input-email').value,
+                especialidad: document.getElementById('input-especialidad').value,
+                rol: document.querySelector('input[name="role"]:checked').value,
+                fecha_registro: new Date().toLocaleString('es-PE')
+            };
+            
+            // Mostrar vista de carga
+            regView.classList.add('hidden');
+            loadingView.classList.remove('hidden');
+            
+            try {
+                // Enviar correo usando EmailJS
+                const response = await emailjs.send(
+                    EMAILJS_SERVICE_ID,
+                    EMAILJS_TEMPLATE_ID,
+                    {
+                        to_email: formData.email,
+                        to_name: formData.nombre_completo,
+                        nombre: formData.nombre,
+                        apellido_paterno: formData.apellido_paterno,
+                        apellido_materno: formData.apellido_materno,
+                        documento: formData.tipo_documento + ': ' + formData.numero_documento,
+                        celular: formData.celular,
+                        cargo: formData.cargo,
+                        especialidad: formData.especialidad,
+                        rol: formData.rol,
+                        fecha_registro: formData.fecha_registro
+                    }
+                );
+                
+                console.log('Correo enviado exitosamente:', response);
+                
+                // Mostrar vista de éxito
+                loadingView.classList.add('hidden');
+                successView.classList.remove('hidden');
+                document.getElementById('display-name').innerText = formData.nombre;
+                document.getElementById('display-email').innerText = formData.email;
+                
+            } catch (error) {
+                console.error('Error al enviar el correo:', error);
+                
+                // Mostrar vista de error
+                loadingView.classList.add('hidden');
+                errorView.classList.remove('hidden');
+            }
+        });
+
+        // Partículas 
+        particlesJS("particles-js", {
+            "particles": {
+                "number": { "value": 90, "density": { "enable": true, "value_area": 800 } },
+                "color": { "value": "#22d3ee" },
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.4, "random": true },
+                "size": { "value": 3, "random": true },
+                "line_linked": { "enable": true, "distance": 150, "color": "#22d3ee", "opacity": 0.2, "width": 1 },
+                "move": { "enable": true, "speed": 1.5, "direction": "none", "random": true, "out_mode": "out" }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" }, "resize": true },
+                "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 0.8 } } }
+            },
+            "retina_detect": true
+        });
+    </script>
+</body>
+</html>
